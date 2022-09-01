@@ -21,7 +21,7 @@ public class Product {
     private String name;
     private double price;
     private String description;
-    private String pictureUrl;
+    private String imageUrl;
 
     // TODO: Look into the date class, see if tracking products by timestamp is something you want
 }

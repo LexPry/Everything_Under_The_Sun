@@ -2,10 +2,7 @@ package com.alex.everything_under_the_sun.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
@@ -17,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @ToString(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "orders")
@@ -40,9 +38,9 @@ public class Order {
     @Transient
     public double getTotalOrderPrice() {
         double sum = 0D;
-        List<OrderProduct> orderProducts = getOrderProducts();
+        this.orderProducts = getOrderProducts();
         for (OrderProduct orderProduct : orderProducts) {
-            sum += orderProduct.getPrice();
+            sum += orderProduct.getTotalPrice();
         }
         return sum;
     }
