@@ -2,6 +2,7 @@ package com.alex.everything_under_the_sun.model;
 
 import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
+import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
@@ -9,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Transient;
 import java.util.Objects;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -44,22 +45,17 @@ public class OrderProduct {
     }
 
     @Override
-    public int hashCode()
-    {
-        int result = pk != null ? pk.hashCode() : 0;
-        result = 31 * result + (quantity != null ? quantity.hashCode() : 0);
-        return result;
-    }
-
-    @Override
     public boolean equals(Object o)
     {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         OrderProduct that = (OrderProduct) o;
+        return pk != null && Objects.equals(pk, that.pk);
+    }
 
-        if (!Objects.equals(pk, that.pk)) return false;
-        return Objects.equals(quantity, that.quantity);
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(pk);
     }
 }

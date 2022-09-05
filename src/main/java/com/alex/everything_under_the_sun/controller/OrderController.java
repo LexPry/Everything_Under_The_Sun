@@ -6,6 +6,7 @@ import com.alex.everything_under_the_sun.model.OrderProduct;
 import com.alex.everything_under_the_sun.service.OrderProductService;
 import com.alex.everything_under_the_sun.service.OrderService;
 import com.alex.everything_under_the_sun.service.ProductService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,6 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -77,7 +77,7 @@ public class OrderController {
         return new ResponseEntity<>(order, headers, HttpStatus.CREATED);
     }
 
-    private void validateProductsExistence(List<OrderProductDto> orderProducts)
+    private void validateProductsExistence(@NotNull List<OrderProductDto> orderProducts)
     {
         List<OrderProductDto> list = orderProducts
                 .stream()

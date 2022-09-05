@@ -30,9 +30,8 @@ public class Order {
     @ToString.Include
     private String status;
 
-    @Basic(fetch = FetchType.LAZY)
+    @OneToMany(orphanRemoval = true)
     @JsonManagedReference
-    @OneToMany(mappedBy = "pk.order")
     private List<OrderProduct> orderProducts = new ArrayList<>();
 
     @Transient

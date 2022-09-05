@@ -3,6 +3,7 @@ package com.alex.everything_under_the_sun.controller;
 import com.alex.everything_under_the_sun.model.Product;
 import com.alex.everything_under_the_sun.service.ProductServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class ProductController {
     public @NotNull Iterable<Product> getProducts()
     {
         return productServiceImpl.getAllProducts();
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable String id) {
+        return productServiceImpl.getProduct(Long.parseLong(id));
     }
 }
