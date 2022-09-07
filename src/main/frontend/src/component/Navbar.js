@@ -9,9 +9,9 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top`}>
+        <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5`}>
             <div className={`container`}>
-                <a className={`navbar-brand`} href={`/`}>Everything Under The Sun</a>
+                <Link to={'/'} className={`navbar-brand`}>Everything Under The Sun</Link>
                 <div id="navbarResponsive">
                     <ul className={`navbar-nav`}>
                         <a className={`nav-link dropdown-toggle`}
@@ -28,9 +28,11 @@ export const Navbar = () => {
                             aria-labelledby='navbarDropdown'
                             role='menu'>
                             <li><Link to='/'
-                                         className={`dropdown-item`}>Home</Link></li>
+                                      className={`dropdown-item`}>Home</Link></li>
                             <li><Link to='/about'
-                                         className={`dropdown-item`}>About</Link></li>
+                                      className={`dropdown-item`}>About</Link></li>
+                            <li><Link to={'/login'}
+                                      className={`dropdown-item`}>Login</Link></li>
                         </ul>
                     </ul>
                 </div>
