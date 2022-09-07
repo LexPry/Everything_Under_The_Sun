@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
     const [ collapse, setCollapse ] = useState(false);
 
     function toggleCollapse() {
@@ -31,8 +31,7 @@ export const Navbar = () => {
                                       className={`dropdown-item`}>Home</Link></li>
                             <li><Link to='/about'
                                       className={`dropdown-item`}>About</Link></li>
-                            <li><Link to={'/login'}
-                                      className={`dropdown-item`}>Login</Link></li>
+                            <li className={`dropdown-item`} onClick={props.setOpenModal}>Login</li>
                         </ul>
                     </ul>
                 </div>
