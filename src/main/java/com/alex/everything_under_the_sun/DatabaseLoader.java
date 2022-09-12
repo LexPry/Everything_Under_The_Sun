@@ -48,9 +48,29 @@ public class DatabaseLoader implements CommandLineRunner {
                 628.78,
                 "Don't miss a thing with this high end desktop monitor!",
                 "https://9to5toys.com/wp-content/uploads/sites/5/2021/10/sceptre-nebula-44-monitor-5.jpg"));
+
+
+        //! Delete everything below this & move the log message
+        productServiceImpl.save(new Product(4L,
+                "pool",
+                762.31,
+                "An outdoor pool for those hot summer days!",
+                "..."));
+        productServiceImpl.save(new Product(5L,
+                "fan",
+                12.27,
+                "A Fan to cool your house on hot days",
+                "..."));
+        productServiceImpl.save(new Product(6L,
+                "scratching post",
+                31.51,
+                "A quality scratching post for your favorite pet",
+                "..."));
+        productServiceImpl.save(new Product(7L,
+                "tie",
+                5.17,
+                "A Polkadot tie for those days when you're feeling fun!",
+                "..."));
         log.log(Level.FINE, "Finished adding products");
-//        log.log(Level.FINE, "Adding orders...");
-//
-//        log.log(Level.FINE, "Finished adding orders");
     }
 }

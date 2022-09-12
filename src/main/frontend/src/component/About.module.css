@@ -1,0 +1,28 @@
+.about {
+    padding: .5rem;
+}
+
+.about :is(h1,h3) {
+    text-align: center;
+    text-decoration: underline 2px solid #0d6efd;
+    text-underline: #0d6efd;
+    padding: 2rem;
+}
+
+.name {
+    color: gold;
+    font-size: 3rem;
+    text-decoration: underline 1px solid black;
+    text-align: center;
+    place-content: center;
+    font-weight: bold;
+}
+
+.about :is(p) {
+    place-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: gray;
+    border-radius: 20px;
+    color: white;
+}

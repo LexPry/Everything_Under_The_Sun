@@ -9,7 +9,7 @@ export const Navbar = (props) => {
     }
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top mb-5`}>
+        <nav className={`navbar navbar-expand-lg navbar-dark bg-dark fixed-top `}>
             <div className={`container`}>
                 <Link to={'/'} className={`navbar-brand`}>Everything Under The Sun</Link>
                 <div id="navbarResponsive">

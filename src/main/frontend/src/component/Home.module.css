@@ -1,0 +1,9 @@
+.products {
+    list-style: none;
+    text-decoration: none;
+}
+
+.productDescription {
+    font-weight: bold;
+    text-align: center;
+}
